@@ -2,8 +2,34 @@
   <div class="jumbotron">
     <h1>GitHub Search</h1>
   </div>
-  <app-profile-form></app-profile-form>
-  <a href="{{user.html_url}}" class="btn btn-success" id="view">View Profile</a>
-
-
+  <div class="row">
+    <div class="col-md-6">
+      <app-profile-form></app-profile-form>
+      <a href="{{user.html_url}}" class="btn btn-success" id="view">Search</a>
+    </div>
+    <div class="col-md-6">
+      <table>
+        <!-- <tr>
+          <td >Name: </td>
+          <td class="label">{{user.name}}</td>
+        </tr> -->
+        <tr>
+          <td >Github username: </td>
+          <td class="label">{{user.login}}</td>
+        </tr>
+        <!-- <tr>
+          <td >Email Information: </td>
+          <td class="label">{{user.email}}</td>
+        </tr>
+        <tr>
+          <td >Location: </td>
+          <td class="label">{{user.location}}</td>
+        </tr> -->
+        <tr>
+          <td >Repositories: </td>
+          <td class="label">{{user.public_repos}}</td>
+        </tr>
+        </table>
+    </div>
+  </div>
 </div>
