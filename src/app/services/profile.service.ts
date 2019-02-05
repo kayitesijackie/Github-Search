@@ -12,57 +12,48 @@ import { DatePipe } from '@angular/common';
 
 export class ProfileService {
   repo: Repo; 
-    user: User;
-
+  user: User;
+  
   private username: string;
   items;
-  constructor(private http:HttpClient) { 
-    console.log ("service is now ready!");
-    this.username = 'kayitesijackie';
-    this.user = new User (' ',' ',' ',' ',' ',0,' ');
-    this.repo = new Repo (' ', ' ', ' ', ' ', ' ');
-  }
-  getProfileInfo(username){
-    interface ApiResponse {
-      name: string;
+constructor(private http: HttpClient) {
+  this.user = new User ('  ',' ', 0);
+  this.repo = new Repo (' ', ' ', ' ', ' ', ' ', ' ');
+}
+ getProfileInfo(username) {
+  interface ApiResponse {
+      
       login: string;
-      avatar_url: string;
-      email: string;
-      location: string;
       public_repos: number;
       html_url: string;
-    // return this.http.get("https://api.github.com/users/" + this.username)
+}
+const promise = new Promise((resolve, reject) => {
 
-  }
-  const promise = new Promise((resolve, reject) => {
-    this.http.get<ApiResponse>(username).toPromise().then(profile => {
-         this.user.name = profile.name;
-        this.user.login = profile.login;
-        this.user.avatar_url = profile.avatar_url;
-        this.user.email = profile.email;
-        this.user.location = profile.location;
-        this.user.public_repos = profile.public_repos;
-        this.user.html_url = profile.html_url;
+  this.http.get<ApiResponse>("https://api.github.com/users/"+ username + "?access_token=4e506891c065d69bf641bbe51727e32d407658e2").toPromise().then(profile => {
+      
+      this.user.login = profile.login;
+      this.user.public_repos = profile.public_repos;
+      this.user.html_url = profile.html_url;
 
-        console.log(profile);
-         resolve();
-    },
-    
-    );
+      console.log(profile);
+       resolve();
+  },
+  
+  );
 });
 return promise;
 }
 getRepoInfo(username) {
-  interface ApiResponse {
-    name: string;
-    homepage: string;
-    description: string;
-    html_url: string;
-    clone_url: string;
+interface ApiResponse {
+  name: string;
+  homepage: string;
+  description: string;
+  html_url: string;
+  clone_url: string;
 }
-this.http.get<ApiResponse>(username).subscribe(response => {
-  
-    this.items = response;  
-  });
+this.http.get<ApiResponse>("https://api.github.com/users/"+ username + "/repos?access_token=4e506891c065d69bf641bbe51727e32d407658e2").subscribe(response => {
+
+  this.items = response;  
+});
 }
 }
