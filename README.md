@@ -7,6 +7,7 @@ The website where users may enter a GitHub username into a form, submit it, and 
 #### By **Jackie**
 
 ## Link to site
+https://kayitesijackie.github.io/Github-Search/
 
 ## Setup/Installation Requirements
 No setup is required/installation is required to access this file
