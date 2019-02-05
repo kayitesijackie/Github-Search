@@ -6,12 +6,14 @@ import { ProfileService } from './services/profile.service';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    StrikethroughDirective
   ],
   imports: [
     BrowserModule,
