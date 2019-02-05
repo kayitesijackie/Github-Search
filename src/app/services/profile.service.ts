@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {User} from '../user';
 import {environment} from '../../environments/environment';
 import {Repo} from '../repo';
+import { DatePipe } from '@angular/common';
 
 
 @Injectable({
@@ -34,7 +35,7 @@ export class ProfileService {
 
   }
   const promise = new Promise((resolve, reject) => {
-    this.http.get<ApiResponse>(environment.apiUrl + username + environment.apikey).toPromise().then(profile => {
+    this.http.get<ApiResponse>(username).toPromise().then(profile => {
          this.user.name = profile.name;
         this.user.login = profile.login;
         this.user.avatar_url = profile.avatar_url;
@@ -59,7 +60,7 @@ getRepoInfo(username) {
     html_url: string;
     clone_url: string;
 }
-this.http.get<ApiResponse>(environment.apiUrl + username + environment.apiRepokey).subscribe(response => {
+this.http.get<ApiResponse>(username).subscribe(response => {
   
     this.items = response;  
   });
