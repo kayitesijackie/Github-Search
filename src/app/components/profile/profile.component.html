@@ -3,11 +3,16 @@
     <h1>GitHub Search</h1>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <app-profile-form></app-profile-form>
+      
       <a href="{{user.html_url}}" class="btn btn-success" id="view">Search</a>
+      
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
+      <img src="{{user.avatar_url}}" height="200" class="img-circle"><br><br>
+    </div>
+    <div class="col-md-5">
       <table>
         <tr>
           <td >Github username: </td>
@@ -17,7 +22,15 @@
           <td >Repositories: </td>
           <td class="label">{{user.public_repos}}</td>
         </tr>
-        </table>
+        <tr>
+          <td >Followers: </td>
+          <td class="label">{{user.followers}}</td>
+        </tr>
+        <tr>
+          <td >Following: </td>
+          <td class="label">{{user.following}}</td>
+        </tr>
+      </table>
     </div>
   </div>
   <hr>
