@@ -10,6 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { DateCountPipe } from './datecount.pipe';
 
 
 
@@ -24,6 +25,7 @@ const routes:Routes=[
     ProfileFormComponent,
     StrikethroughDirective,
     RepositoriesComponent,
+    DateCountPipe
    
   ],
   imports: [
