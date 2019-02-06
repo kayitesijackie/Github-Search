@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
 ## Description
-The website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories.
+The website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. But before submit it the user will see all repositories of the owner of the username, the user can view it or see the demo or clone it.
 #### By **Jackie**
 
 ## Link to site
